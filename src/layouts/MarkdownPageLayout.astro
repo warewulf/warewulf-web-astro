@@ -1,0 +1,24 @@
+---
+import Layout from "@layouts/Layout.astro";
+
+const { frontmatter } = Astro.props;
+---
+
+<Layout
+  title={`${frontmatter.title} | Warewulf - The Next-Gen Cluster Management Solution`}
+>
+  <div class="bg-white px-6 py-40 lg:px-8">
+    <div class="mx-auto max-w-3xl text-base leading-7 text-gray-700">
+      <h1
+        class="mt-2 text-center text-3xl font-bold uppercase tracking-tight text-gray-900 sm:text-4xl"
+      >
+        {frontmatter.title}
+      </h1>
+      <article
+        class="prose my-14 max-w-7xl prose-a:font-semibold prose-a:text-green-700 prose-code:rounded-lg prose-code:bg-green-950 prose-code:p-1 prose-code:text-green-50"
+      >
+        <slot />
+      </article>
+    </div>
+  </div>
+</Layout>
